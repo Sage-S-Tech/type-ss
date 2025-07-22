@@ -1,0 +1,12 @@
+{
+  "name": "type-ss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Sage-S-Tech/type-ss.git",
+  "author": "Sage-tech <Sierra.s.sage@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
