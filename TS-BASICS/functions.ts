@@ -19,6 +19,23 @@ export const addStrings = (str1: string, str2: string = ""): string => `${str1} 
 export const format = (title: string, param: string | number ): string => 
     `${title} ${param}`;
 // void functions = where you are not actually going to return anything at all
-export const printFormat = (title: string, param: string | number) => {
+export const printFormat = (title: string, param: string | number): void => {
     console.log(format(title,param))
+};
+
+// Functions that return Promises
+
+
+export const fecthData = (url: string): Promise<string> => Promise.resolve(`Data from ${url}`);
+// REST Parameters when multiple arguments and the coalesce them into an array 
+function introduce(salutation: string, ...names:string[]): string {
+    return `${salutation} ${names.join('')}`;
 }
+export function getName(user: {first: string; last:string}): string {
+return `${user?.first ?? "first"} ${user?.last ?? "last"}`;
+}
+
+//ex) user.first   adding a chaining operator ? user?.first
+
+// this is so that the user is defined before we de-reference it 
+// ? ?? is like a trunary 

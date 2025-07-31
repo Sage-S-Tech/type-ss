@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.printFormat = exports.format = exports.addStrings = void 0;
+exports.fecthData = exports.printFormat = exports.format = exports.addStrings = void 0;
+exports.getName = getName;
 // definine functions
 // this function takes 2 values 
 function addNumbers(a, b) {
@@ -28,3 +29,21 @@ var printFormat = function (title, param) {
     console.log((0, exports.format)(title, param));
 };
 exports.printFormat = printFormat;
+// Functions that return Promises
+var fecthData = function (url) { return Promise.resolve("Data from ".concat(url)); };
+exports.fecthData = fecthData;
+// REST Parameters when multiple arguments and the coalesce them into an array 
+function introduce(salutation) {
+    var names = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        names[_i - 1] = arguments[_i];
+    }
+    return "".concat(salutation, " ").concat(names.join(''));
+}
+function getName(user) {
+    var _a, _b;
+    return "".concat((_a = user === null || user === void 0 ? void 0 : user.first) !== null && _a !== void 0 ? _a : "first", " ").concat((_b = user === null || user === void 0 ? void 0 : user.last) !== null && _b !== void 0 ? _b : "last");
+}
+//ex) user.first   adding a chaining operator ? user?.first
+// this is so that the user is defined before we de-reference it 
+// ? ?? is like a trunary 
